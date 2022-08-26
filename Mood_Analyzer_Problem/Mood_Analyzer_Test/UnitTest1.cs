@@ -48,5 +48,22 @@ namespace Mood_Analyzer_Test
             var result = program.AnalyseMood();
             Assert.AreEqual("Happy", result);
         }
+
+        [TestMethod]
+        [DataRow("")]
+        public void TestMethod6(string m)
+        {
+            try
+            {
+                Mood_Analyzer_Problem.Program program = new Mood_Analyzer_Problem.Program(m);
+                string result = program.AnalyseMood();
+                
+            }
+            catch (MoodAnalyserException e)
+            {
+                Assert.AreEqual("Mood should not be empty", e.Message);
+
+            }
+        }
     }
 }
