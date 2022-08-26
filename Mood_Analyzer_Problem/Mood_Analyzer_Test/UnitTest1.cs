@@ -15,31 +15,38 @@ namespace Mood_Analyzer_Test
         [TestMethod]
         public void TestMethod1()
         {
-            Mood_Analyzer_Problem.Program program = new Mood_Analyzer_Problem.Program();
-            var result = program.AnalyseMood("Happy");
+            Mood_Analyzer_Problem.Program program = new Mood_Analyzer_Problem.Program("Happy");
+            var result = program.AnalyseMood();
             Assert.AreEqual("Happy mood", result);
         }
         [TestMethod]
         public void TestMethod2()
         {
-            Mood_Analyzer_Problem.Program program = new Mood_Analyzer_Problem.Program();
-            var result = program.AnalyseMood("Sad");
+            Mood_Analyzer_Problem.Program program = new Mood_Analyzer_Problem.Program("Sad");
+            var result = program.AnalyseMood();
             Assert.AreEqual("Sad mood", result);
         }
         [TestMethod]
         public void TestMethod3()
         {
-            Mood_Analyzer_Problem.Program program = new Mood_Analyzer_Problem.Program();
-            var result = program.AnalyseMood("I am Sad");
+            Mood_Analyzer_Problem.Program program = new Mood_Analyzer_Problem.Program("I am Sad");
+            var result = program.AnalyseMood();
             Assert.AreEqual("SAD", result);
         }
         [TestMethod]
         public void TestMethod4()
         {
-            Mood_Analyzer_Problem.Program program = new Mood_Analyzer_Problem.Program();
-            var result = program.AnalyseMood("I am in Any");
+            Mood_Analyzer_Problem.Program program = new Mood_Analyzer_Problem.Program("I am in Any");
+            var result = program.AnalyseMood();
             Assert.AreEqual("Happy", result);
         }
 
+        [TestMethod]
+        public void TestMethod5()
+        {
+            Mood_Analyzer_Problem.Program program = new Mood_Analyzer_Problem.Program();
+            var result = program.AnalyseMood();
+            Assert.AreEqual("Happy", result);
+        }
     }
 }

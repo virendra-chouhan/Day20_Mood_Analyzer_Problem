@@ -4,25 +4,44 @@ namespace Mood_Analyzer_Problem
 {
     public class Program
     {
+        private string message;
+        public Program(): this("I")
+        {
+            
+        }
+        public Program(string message)
+        {
+            this.message = message;
+        }
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
+            Program p = new Program();
+            string v = p.AnalyseMood();
+            Console.WriteLine("Hello World!"+ v);
+
         }
-        public string AnalyseMood(string mood)
+        public string AnalyseMood()
         {
-            if (mood.Equals("Happy"))
+            try { 
+            if (this.message.Equals("Happy"))
             {
-                return mood + " mood";
+                return message + " mood";
             }
-            else if (mood.Equals("Sad"))
+            else if (message.Equals("Sad"))
             {
-                return mood + " mood";
+                return message + " mood";
             }
-            else if (mood.Equals("I am Sad"))
+            else if (message.Equals("I am Sad"))
             {
                 return "SAD";
             }
             else
+            {
+                return "Happy";
+            }
+            }
+            catch
             {
                 return "Happy";
             }
